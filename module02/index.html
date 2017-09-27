@@ -1,0 +1,19 @@
+<html ng-app="store">
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <meta charset="utf-8">
+      <title>This is my AngularJS Training</title>
+    </head>
+    <body ng-controller="StoreController">
+      <ul class="list-group">
+        <li class="list-group-item"
+            ng-repeat="product in products | orderBy: '-price' | limitTo:3">
+          <h3>
+            {{ product.name | uppercase }}
+            <em class="pull-right">{{ product.price | currency }}</em>
+          </h3>
+      </ul>
+      <script type="text/javascript" src="../js/angular.min.js"></script>
+      <script type="text/javascript" src="js/app.js"></script>
+    </body>
+  </html>
